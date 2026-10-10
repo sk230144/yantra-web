@@ -42,7 +42,7 @@ const HOSPITALS: Hospital[] = [
 
 export function HospitalsSection() {
   return (
-    <section className="h-[394px] bg-navy pt-[24px]">
+    <section id="mobile-hospitals" className="h-[394px] bg-navy pt-[24px]">
       <h2 className="ml-[49px] w-[282px] text-[20px] font-bold leading-[normal] text-white">
         Few of the hospitals we are associated with
       </h2>

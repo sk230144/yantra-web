@@ -14,7 +14,7 @@ const REPORT_POINTS: ReportPoint[] = [
 
 export function CaseStudySection() {
   return (
-    <section className="relative h-[908px] bg-periwinkle text-white">
+    <section id="mobile-case-study" className="relative h-[908px] bg-periwinkle text-white">
       <Image src="/images/bullet-dot.svg" alt="" width={6} height={6} className="absolute left-[38px] top-[43px]" />
       <p className="absolute left-[48px] top-[37px] text-[15px] font-bold leading-[1.1]">CaseStudy</p>
 

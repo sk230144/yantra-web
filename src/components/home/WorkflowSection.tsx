@@ -17,7 +17,7 @@ const STEPS: Step[] = [
 
 export function WorkflowSection() {
   return (
-    <section className="h-[901px] pt-[41px]">
+    <section id="mobile-process" className="h-[901px] pt-[41px]">
       <h2 className="ml-[51px] whitespace-nowrap text-[30px] leading-[normal]">Our Proven Workflow</h2>
 
       <ol className="mt-[28px]">

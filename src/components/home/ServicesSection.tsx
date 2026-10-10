@@ -22,7 +22,7 @@ const SERVICES: Service[] = [
 
 export function ServicesSection() {
   return (
-    <section className="h-[442px]">
+    <section id="mobile-services" className="h-[442px]">
       <h2 className="translate-x-px text-center text-[25px] leading-[40px] text-[#5a5a5a]">Our Services</h2>
 
       {/* Four stacked bands; each sits 1px in from the left so a sliver of the base colour shows. */}

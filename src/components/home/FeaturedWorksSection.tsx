@@ -21,7 +21,7 @@ function CarouselArrow({ direction, dimmed }: { direction: "prev" | "next"; dimm
 
 export function FeaturedWorksSection() {
   return (
-    <section className="h-[856px] pt-[33px]">
+    <section id="mobile-work" className="h-[856px] pt-[33px]">
       {/* Title sits above the mockup, whose white background overlaps it by 51px. */}
       <h2 className="relative z-10 -translate-x-[4.5px] text-center font-display text-[30px] leading-[40px] text-[#9aaebc]">
         Few of our featured&nbsp;
