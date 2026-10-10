@@ -23,6 +23,9 @@
   --color-forest: #13392c;
   --color-soft: #f7f7f7;
   --color-divider: #d9e6f0;
+  --color-lime: #c2ff1c;
+  --color-leaf: #2c5512;
+  --color-mist-blue: #f2f4ff;
 
   --shadow-soft: 0px 4px 4px 0px rgb(0 0 0 / 0.25);
 
@@ -56,11 +59,11 @@ html {
   scroll-behavior: smooth;
 }
 
-.desktop-site {
-  overflow: clip;
+.wide-site {
+  overflow-x: clip;
 }
 
-.desktop-site ::selection {
+.wide-site ::selection {
   background: #04a9b3;
   color: #ffffff;
 }

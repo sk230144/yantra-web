@@ -15,8 +15,7 @@ import { SiteFooter } from "@/components/home/SiteFooter";
 import { SiteHeader } from "@/components/home/SiteHeader";
 import { TeamSection } from "@/components/home/TeamSection";
 import { WorkflowSection } from "@/components/home/WorkflowSection";
-import { DesktopHome } from "@/components/home/DesktopHome";
-import { TabletHome } from "@/components/home/TabletHome";
+import { WideHome } from "@/components/wide/WideHome";
 
 export default function Home() {
   return (
@@ -42,11 +41,8 @@ export default function Home() {
         </main>
         <SiteFooter />
       </div>
-      <div className="hidden md:block lg:hidden">
-        <TabletHome />
-      </div>
-      <div className="hidden lg:block">
-        <DesktopHome />
+      <div className="wide-site hidden md:block">
+        <WideHome />
       </div>
     </>
   );

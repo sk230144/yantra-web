@@ -1,51 +1,11 @@
 import Image from "next/image";
-
-type ClientLogo = { name: string; slug: string; width: number; height: number };
-
-// Logos are pre-trimmed to their visible content (public/images/clients); width/height are the file's pixels.
-const ROW_ONE: ClientLogo[] = [
-  { name: "CSB Bank", slug: "csb-bank", width: 640, height: 162 },
-  { name: "Mistral of Milan", slug: "mistral-of-milan", width: 246, height: 63 },
-  { name: "Fortis", slug: "fortis", width: 487, height: 200 },
-  { name: "Danish Academy", slug: "danish-academy", width: 289, height: 65 },
-  { name: "The Taplow Group", slug: "taplow-group", width: 452, height: 200 },
-  { name: "Mediland Hospital and Research Centre", slug: "mediland", width: 640, height: 174 },
-  { name: "Delhivery", slug: "delhivery", width: 640, height: 108 },
-  { name: "Ink & Inspiration", slug: "ink-and-inspiration", width: 345, height: 200 },
-  { name: "Jagannath University", slug: "jagannath-university", width: 600, height: 200 },
-  { name: "Government of Assam", slug: "govt-of-assam", width: 251, height: 80 },
-  { name: "Lifesave Hospital", slug: "lifesave-hospital", width: 640, height: 133 },
-  { name: "Sheeya", slug: "sheeya", width: 190, height: 44 },
-];
-
-const ROW_TWO: ClientLogo[] = [
-  { name: "inDrive", slug: "indrive", width: 640, height: 181 },
-  { name: "Care and Cure Multi-speciality Hospital", slug: "care-and-cure-hospital", width: 640, height: 167 },
-  { name: "Maya Jewellers", slug: "maya-jewellers", width: 190, height: 53 },
-  { name: "AVI Enterprises", slug: "avi-enterprises", width: 640, height: 125 },
-  { name: "Jeevan Jyoti Hospital & Research Center", slug: "jeevan-jyoti-hospital", width: 337, height: 81 },
-  { name: "Hotel Rudraksh", slug: "hotel-rudraksh", width: 640, height: 164 },
-  { name: "Dental Remedy", slug: "dental-remedy", width: 615, height: 200 },
-  { name: "Siva Sundari Nari Sikshashram", slug: "siva-sundari-nari-sikshashram", width: 258, height: 61 },
-  { name: "ALK Pure 8+", slug: "alk-pure", width: 640, height: 164 },
-  { name: "Ayu Bandhan", slug: "ayu-bandhan", width: 449, height: 200 },
-  { name: "Pratidhi Welfare Foundation", slug: "pratidhi-welfare-foundation", width: 237, height: 72 },
-];
+import { CLIENT_LOGOS_ROW_ONE, CLIENT_LOGOS_ROW_TWO, logoDisplaySize, type ClientLogo } from "@/content/home";
 
 const LOGO_AREA = 9000; // Every logo gets roughly the same visual weight (≈ inDrive's 198×56 in Figma).
 const LOGO_GAP = 40;
 const SCROLL_SPEED = 40; // px per second
 
-function displaySize({ width, height }: ClientLogo) {
-  const aspect = width / height;
-  let h = Math.min(64, Math.sqrt(LOGO_AREA / aspect));
-  let w = h * aspect;
-  if (w > 200) {
-    w = 200;
-    h = w / aspect;
-  }
-  return { width: Math.round(w), height: Math.round(h) };
-}
+const displaySize = (logo: ClientLogo) => logoDisplaySize(logo, LOGO_AREA, 64, 200);
 
 function MarqueeRow({ logos, reverse, className }: { logos: ClientLogo[]; reverse?: boolean; className: string }) {
   const rowWidth = logos.reduce((sum, logo) => sum + displaySize(logo).width + LOGO_GAP, 0);
@@ -83,8 +43,8 @@ export function ClientsSection() {
         Few of Our Clients
       </h2>
 
-      <MarqueeRow logos={ROW_ONE} className="top-[80px]" />
-      <MarqueeRow logos={ROW_TWO} reverse className="top-[190px]" />
+      <MarqueeRow logos={CLIENT_LOGOS_ROW_ONE} className="top-[80px]" />
+      <MarqueeRow logos={CLIENT_LOGOS_ROW_TWO} reverse className="top-[190px]" />
     </section>
   );
 }
